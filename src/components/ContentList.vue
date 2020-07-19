@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<ul class="resultList">
-			<li v-for="item in datas">
+			<li v-for="item in datas" @click="toDetail(item,datas)">
 				<span class="title">{{item.title}}</span><br/>
 				<span class="details">{{item.description}}</span>
 			</li>
@@ -42,6 +42,19 @@
 			next() {
 				this.page ++
 				this.$parent.next(this.page)
+			},
+			toDetail(item, datas){
+
+				this.$router.push({
+					
+					name: 'searchDetail',
+					query: {
+						title: item.title,
+						detail: item.description,
+						datas: datas
+					}
+					
+				})
 			}
 		}
 	}
@@ -67,6 +80,9 @@
 		font-size: 25px;
 		padding: 10px;
 		border: 1px solid @color-border-gray;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
 	}
 	.resultList li:hover {
 		background: @color-primary;
