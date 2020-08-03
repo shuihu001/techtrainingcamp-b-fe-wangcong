@@ -1,21 +1,21 @@
 <template>
-  <div class="search-result-toobar">
-		<img class="logo" src="../assets/字节跳动.png" @click="goHome"/>
+	<div class="search-result-toobar">
+		<img class="logo" src="../assets/字节跳动.png" @click="goHome" />
 
 		<RoundSearchBar :search="search"></RoundSearchBar>
-  </div>
+	</div>
 </template>
 
 <script>
 	import RoundSearchBar from '@/components/RoundSearchBar.vue'
 	export default {
-		name:"search-result-toobar",
-		props:['search'], //传入参数
-	  components: {
+		name: "search-result-toobar",
+		props: ['search'], //传入参数
+		components: {
 			RoundSearchBar
-	  },
-		methods:{
-			goHome(){
+		},
+		methods: {
+			goHome() {
 				this.$router.push("/")
 			}
 		}
@@ -24,12 +24,14 @@
 
 <style lang="less" scoped>
 	@import "./../themes/base.less";
-	.search-result-toobar{
+
+	.search-result-toobar {
 		text-align: left;
 		padding: @space-large;
 		border-bottom: solid 1px @color-border-gray;
 	}
-	.logo{
+
+	.logo {
 		height: @round-search-bar-height+10;
 		vertical-align: middle;
 		margin: @space-normal;

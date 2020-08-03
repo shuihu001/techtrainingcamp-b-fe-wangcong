@@ -1,39 +1,39 @@
 <template>
-  <div class="home">
+	<div class="home">
 		<div class="home-search-panel">
-			<MySearchLogo class='my-search-logo'/>
+			<MySearchLogo class='my-search-logo' />
 			<HomeSearchBar class='home-search-bar'></HomeSearchBar>
 		</div>
 
 
-  </div>
+	</div>
 </template>
 
 <script>
-// @ is an alias to /src
+	// @ is an alias to /src
 
-import HomeSearchBar from '@/components/HomeSearchBar.vue'
-import MySearchLogo from '@/components/MySearchLogo.vue'
+	import HomeSearchBar from '@/components/HomeSearchBar.vue'
+	import MySearchLogo from '@/components/MySearchLogo.vue'
 
 
-export default {
-  name: 'Home',
-  components: {
-		MySearchLogo,
-		HomeSearchBar
-  }
-}
+	export default {
+		name: 'Home',
+		components: {
+			MySearchLogo,
+			HomeSearchBar
+		}
+	}
 </script>
 
 <style lang="less" scoped>
-	.my-search-logo{
+	.my-search-logo {
 		margin-top: 90px;
 		margin-bottom: 30px;
 	}
-	.home-search-panel{
 
-	}
-	.home-search-bar{
+	.home-search-panel {}
+
+	.home-search-bar {
 		margin: auto;
 	}
-	</style>
+</style>

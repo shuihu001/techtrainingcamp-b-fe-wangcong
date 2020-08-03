@@ -1,50 +1,49 @@
 <template>
-	
+
 	<div class="search-detail-page">
 		<div class="context">
-		<h1>{{title}}</h1>
-		<p>{{detail}}</p>
+			<h1>{{title}}</h1>
+			<p>{{detail}}</p>
 		</div>
-		
-		
+
+
 		<div class="sublist">
 			<ul class="resultList">
 				<li v-for="item in datas" @click="toDetail(item,datas)">
-					<span class="title">{{item.title}}</span><br/>
+					<span class="title">{{item.title}}</span><br />
 					<span class="details">{{item.description}}</span>
 				</li>
 			</ul>
 		</div>
 	</div>
-	
+
 
 </template>
 
 <script>
-
 	export default {
 		name: 'search-detail-page',
 		data() {
 			return {
 				title: '',
 				detail: '',
-				datas:''
+				datas: ''
 			}
 		},
 		created() {
 			this.title = this.$route.query.title,
-			this.detail = this.$route.query.detail,
-			this.datas = this.$route.query.datas
+				this.detail = this.$route.query.detail,
+				this.datas = this.$route.query.datas
 
 
 		},
-		methods:{
-			toDetail(item,datas){
-				this.title=item.title
+		methods: {
+			toDetail(item, datas) {
+				this.title = item.title
 				this.detail = item.description
-				
-				
-				
+
+
+
 
 			}
 		}
@@ -54,10 +53,10 @@
 <style lang="less" scoped>
 	@import "./../themes/base.less";
 
-	
-	.context{
-		position:absolute;
-		left:0;
+
+	.context {
+		position: absolute;
+		left: 0;
 		bottom: 0;
 
 		width: 75%;
@@ -65,8 +64,9 @@
 		float: left;
 		background-color: #F6F4F2;
 	}
-	.sublist{
-		position:absolute;
+
+	.sublist {
+		position: absolute;
 		right: 0;
 		top: 0;
 		padding: 0 0px;
@@ -75,10 +75,10 @@
 		height: 100%;
 		overflow: auto;
 	}
-	
-	p{
-	text-indent: 2em;
-	text-align: left;
+
+	p {
+		text-indent: 2em;
+		text-align: left;
 	}
 
 	.resultList {
@@ -87,11 +87,12 @@
 		padding: 0 0px;
 		transition: all .3s ease;
 		margin-top: 0px;
-		
+
 		width: 100%;
-		border-radius: 0 0  @home-search-bar-border-radius @home-search-bar-border-radius;
+		border-radius: 0 0 @home-search-bar-border-radius @home-search-bar-border-radius;
 
 	}
+
 	.resultList li {
 		line-height: 50px;
 		height: auto;
@@ -106,11 +107,12 @@
 	.resultList li:hover {
 		background: @color-primary;
 	}
-	.title{
+
+	.title {
 		color: paleturquoise;
 	}
-	.details{
+
+	.details {
 		font-size: 15px;
 	}
-
 </style>
