@@ -1,7 +1,7 @@
 <template>
 	<div class="home-search-bar">
 		<input class="input-search" v-model="searchText" @keydown.enter="handleClick(doSearch)" @keyup="searchData(searchText)" />
-		<button class="btn-search" @click="handleClick(doSearch)">搜索一下</button>
+		<button class="btn-search" @click="handleClick(doSearch)">搜索一下6666</button>
 		<ul class="resultList">
 			<li v-for="(item) in options" @click="handleLiClick(item)">{{item.keyword}}</li>
 			<p v-show="searchText && searchList && searchList.length==0">暂无数据...</p>
