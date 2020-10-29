@@ -4,6 +4,7 @@ export function Request(config, success, failure) {
 		baseURL: 'https://i.snssdk.com/search/api/',
 		timeout: 5000
 	})
+	//拦截器
 	instance.interceptors.request.use(config => {
 		return config
 	}, error => {
